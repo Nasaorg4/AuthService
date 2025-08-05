@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: my-dotnet-microservice
+    runtime: dotnet
+    repo: https://github.com/Nasaorg4/AuthService
+    branch: main
+    buildCommand: dotnet publish -c Release -o out
+    startCommand: dotnet out/AuthService.dll
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
